@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frankenstein Dev Copilot (Lite)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-logo">
+            <div class="logo-icon">⚡</div>
+            <h1 class="logo-text">Frankenstein Dev Copilot</h1>
+            <div class="logo-glow"></div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container" id="appContainer">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="nav-left">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-title">Frankenstein Dev Copilot</span>
+                </div>
+                <div class="nav-subtitle">Quickly understand any GitHub repository</div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+        <!-- Form Section -->
+        <div class="card">
+            <form id="analyzeForm">
+                <div class="form-group">
+                    <label for="repoUrl">
+                        GitHub Repository URL
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="repoUrl" 
+                        placeholder="https://github.com/username/repo"
+                        aria-describedby="repoUrlError"
+                    >
+                    <span id="repoUrlError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">
+                        Main Language
+                        <span class="required">*</span>
+                    </label>
+                    <select id="language" aria-describedby="languageError">
+                        <option value="">Select a language</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span id="languageError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">
+                        Project Description
+                        <span class="optional">(optional)</span>
+                    </label>
+                    <textarea 
+                        id="description" 
+                        rows="4" 
+                        placeholder="Brief description of what this project does..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="analyze-btn" id="analyzeBtn">
+                    <span class="btn-text">Analyze Repo</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results">
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="result-icon">📊</span>
+                    <h2>Project Summary</h2>
+                </div>
+                <ul id="summaryList" class="result-list">
+                    <li class="placeholder">Enter a repository above to see the analysis</li>
+                </ul>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="result-icon">✅</span>
+                    <h2>Suggested Starter Tasks</h2>
+                </div>
+                <ul id="tasksList" class="result-list">
+                    <li class="placeholder">Your starter tasks will appear here</li>
+                </ul>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="result-icon">💡</span>
+                    <h2>README Improvement Tips</h2>
+                </div>
+                <ul id="readmeTipsList" class="result-list">
+                    <li class="placeholder">README tips will be shown here</li>
+                </ul>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="result-icon">🏗️</span>
+                    <h2>Architecture Insight</h2>
+                </div>
+                <ul id="architectureList" class="result-list">
+                    <li class="placeholder">Architecture insights will appear here</li>
+                </ul>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="result-icon">📚</span>
+                    <h2>Learning Path</h2>
+                </div>
+                <ul id="learningPathList" class="result-list">
+                    <li class="placeholder">Your learning path will be shown here</li>
+                </ul>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="result-icon">🚀</span>
+                    <h2>Potential Extensions</h2>
+                </div>
+                <ul id="extensionsList" class="result-list">
+                    <li class="placeholder">Extension ideas will appear here</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

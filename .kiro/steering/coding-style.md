@@ -1,0 +1,4 @@
+- Use very simple, beginner-friendly HTML, CSS, and JavaScript.
+- Avoid advanced patterns; prefer clear functions and comments.
+- Keep the UI clean and minimal but readable on mobile and desktop.
+- All text should be easy to understand for new developers.
